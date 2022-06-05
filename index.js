@@ -8,17 +8,14 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-function createDate(arrayString, posisi) {
+function createDate(arrayString, index) {
   let array = [];
   let parse;
   arrayString.forEach(elemen => {
     parse = parseInt(Date.parse(elemen) / 1000)
     array.push(parse.toString());
-  });
-
-  array.sort(function(a, b) {
-    return a - b;
   })
+  return (typeof(index) == 'number') ? array[index] : array.sort().join("-")
 }
 
 
